@@ -4,10 +4,77 @@
  */
 package logic;
 
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 /**
  *
  * @author leandrogg
  */
+@Entity
 public class Turn {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_turn;
+    @Temporal(TemporalType.DATE)
+    private Date turn_date;
+    private String turn_hour;
+    private String comments;
+    @ManyToOne
+    @JoinColumn(name="")
+    private Psychologist psicho;
+    @ManyToOne
+    @JoinColumn(name="")
+    private Patient pati;
+    
+    public Turn() {
+    }
+
+    public Turn(int id_turn, Date turn_date, String turn_hour, String comments) {
+        this.id_turn = id_turn;
+        this.turn_date = turn_date;
+        this.turn_hour = turn_hour;
+        this.comments = comments;
+    }
+
+    public int getId_turn() {
+        return id_turn;
+    }
+
+    public void setId_turn(int id_turn) {
+        this.id_turn = id_turn;
+    }
+
+    public Date getTurn_date() {
+        return turn_date;
+    }
+
+    public void setTurn_date(Date turn_date) {
+        this.turn_date = turn_date;
+    }
+
+    public String getTurn_hour() {
+        return turn_hour;
+    }
+
+    public void setTurn_hour(String turn_hour) {
+        this.turn_hour = turn_hour;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+    
     
 }
