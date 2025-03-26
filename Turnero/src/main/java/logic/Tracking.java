@@ -24,6 +24,9 @@ public class Tracking {
     @OneToMany(mappedBy="track")
     private List<Notes> list_notes;
 
+    public Tracking() {
+    }
+    
     public Tracking(int id_tracking, List<Notes> list_notes) {
         this.id_tracking = id_tracking;
         this.list_notes = list_notes;

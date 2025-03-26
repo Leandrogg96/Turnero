@@ -27,7 +27,7 @@ public class Diary implements Serializable {
     private int id_diary;
     @Temporal(TemporalType.DATE)
     private Date date;
-    @OneToMany(mappedBy="sess")
+    @OneToMany(mappedBy="diary")
     private List<Session> a_session;
     private String observation;
 
@@ -72,7 +72,5 @@ public class Diary implements Serializable {
     public void setObservation(String observation) {
         this.observation = observation;
     }
-    
-    
     
 }

@@ -24,19 +24,19 @@ public class Notes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_note;
     @Temporal(TemporalType.DATE)
-    private Date day_not;
+    private Date day_note;
     private String commentary;
     
     @ManyToOne
-    @JoinColumn(name="")
+    @JoinColumn(name="tracking_id")
     private Tracking track;
 
     public Notes() {
     }
 
-    public Notes(int id_note, Date day_not, String commentary) {
+    public Notes(int id_note, Date day_note, String commentary) {
         this.id_note = id_note;
-        this.day_not = day_not;
+        this.day_note = day_note;
         this.commentary = commentary;
     }
     
@@ -48,12 +48,12 @@ public class Notes {
         this.id_note = id_note;
     }
 
-    public Date getDay_not() {
-        return day_not;
+    public Date getDay_note() {
+        return day_note;
     }
 
-    public void setDay_not(Date day_not) {
-        this.day_not = day_not;
+    public void setDay_note(Date day_note) {
+        this.day_note = day_note;
     }
 
     public String getCommentary() {
@@ -63,7 +63,14 @@ public class Notes {
     public void setCommentary(String commentary) {
         this.commentary = commentary;
     }
-    
+
+    public Tracking getTrack() {
+        return track;
+    }
+
+    public void setTrack(Tracking track) {
+        this.track = track;
+    }
     
 }
 

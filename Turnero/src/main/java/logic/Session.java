@@ -31,8 +31,8 @@ public class Session {
     private String notes;
     
     @ManyToOne
-    @JoinColumn(name="")
-    private Diary sess;
+    @JoinColumn(name="diary_id")
+    private Diary diary;
     
     public Session() {
     }
@@ -75,7 +75,14 @@ public class Session {
     public void setNotes(String comments) {
         this.notes = comments;
     }
-    
+
+    public Diary getDiary() {
+        return diary;
+    }
+
+    public void setDiary(Diary diary) {
+        this.diary = diary;
+    }
     
 }
 

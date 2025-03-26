@@ -28,10 +28,10 @@ public class Turn {
     private String turn_hour;
     private String comments;
     @ManyToOne
-    @JoinColumn(name="")
+    @JoinColumn(name="psychologist_id")
     private Psychologist psicho;
     @ManyToOne
-    @JoinColumn(name="")
+    @JoinColumn(name="patient_id")
     private Patient pati;
     
     public Turn() {
@@ -75,6 +75,20 @@ public class Turn {
     public void setComments(String comments) {
         this.comments = comments;
     }
-    
-    
+
+    public Psychologist getPsicho() {
+        return psicho;
+    }
+
+    public void setPsicho(Psychologist psicho) {
+        this.psicho = psicho;
+    }
+
+    public Patient getPati() {
+        return pati;
+    }
+
+    public void setPati(Patient pati) {
+        this.pati = pati;
+    }
 }
